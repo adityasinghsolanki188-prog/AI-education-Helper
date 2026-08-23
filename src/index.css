@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+html,body{
+    width:100%;
+    height: 100%;
+}
+nav{
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: blanchedalmond;
+
+}
+nav.h1{
+  color:darkred;
+  text-shadow: #666;
+  
+}
+h1{
+    color: red;
+}
+search-box{
+    display:flex;
+    gap: 5px;
+}
+search-box input{
+    padding:8px 12px;
+    border:1px solid#ccc;
+    border: 5px;
+}
+search-box button{
+    padding:8px 15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    
+}
+
+ul{
+    color: red;
+    display: flex;
+    gap: 25px;
+     list-style:none ;
+    
+}
+li{
+    cursor: pointer;
+}
+.Hero{
+    align-items: center;
+    padding:100px 20px;
+    background: linear-gradient(135deg, #fff0f0, #ffd6d6);
+}
+.Hero h1{
+    font-size: 45px;
+}
+.Hero p1{
+    font-size: 20px;
+    margin: 20px;
+}
+.Hero button{
+    cursor:pointer;
+    padding:12px 25px;
+}
+
+.FindDonor {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.FindDonor h2 {
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+.FindDonor select,
+.FindDonor input {
+  padding: 12px;
+  margin: 10px;
+}
+
+.FindDonor button {
+  padding: 12px 20px;
+  border-radius: 20px;
+  background-color: red;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.FindDonor button:hover{
+transform: translateY(-10px);
+}
+
+
+.blood-card {
+  width: 180px;
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.4s;
+  cursor: pointer;
+}
+.blood-card:hover{
+    transform:  perspective(600px) rotateY(10deg) rotateX(5deg) scale(1.05);
+
+}
+
+.blood-icon {
+  font-size: 40px;
+}
+
+.blood-card h2 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.blood-card p {
+  color: #666;
+}
+
+.blood-card button {
+  padding: 10px 18px;
+  border: none;
+  background-color: lightcoral;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.blood-card button:hover{
+    transform:translateY(-5px);
+}
+
+
+
+.blood-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 30px;
+}
+
+
+
+
+
+
+
+.donor-section {
+  text-align: center;
+  padding: 50px 20px;
+  margin: 40px auto;
+}
+
+.donor-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.donor-section p {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+
+.donor-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 20px;
+  background: #e63946;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition:0.2s;
+}
+.donor-btn:hover{
+  transform:translateY(-5px);
+}
+
+.donor-form {
+  width: 350px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+  background: brown;
+}
+
+.donor-form h3 {
+  margin-bottom: 20px;
+}
+
+.donor-form input,
+.donor-form select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.register-btn,
+.close-btn {
+  padding: 11px 18px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.register-btn {
+  background: #e63946;
+  color: white;
+}
+
+.close-btn {
+  background: #ddd;
+}
+
+
+.Hero {
+  position: relative;
+  min-height: 500px;
+  
+}
+.floating-blood {
+  position: fixed;
+  font-size: 60px;
+  z-index: 9999;
+}
+
+.blood1 {
+  top: 100px;
+  left: 100px;
+  
+   animation: blood1Move 2s ease-in-out infinite alternate;
+}
+
+.blood2 {
+  top: 200px;
+  left: 300px;
+   animation: blood2Move 3.5s ease-in-out infinite alternate;
+}
+
+.blood3 {
+  top: 300px;
+  left: 500px;
+  animation: blood3Move 2.7s ease-in-out infinite alternate;
+}
+
+@keyframes blood1Move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes blood2Move {
+  from {
+    transform: translateY(0) rotate(-5deg);
+  }
+  to {
+    transform: translateY(-80px) rotate(5deg);
+  }
+}
+
+@keyframes blood3Move {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-55px);
+  }
+}
