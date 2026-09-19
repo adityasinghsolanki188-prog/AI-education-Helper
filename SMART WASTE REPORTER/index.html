@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Waste Reporter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🗑️ Smart Waste Reporter</h1>
+  <p>Report overflowing bins and illegal dumping in your area</p>
+</header>
+
+<div class="wrap">
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-box">
+      <div class="num" id="statTotal">0</div>
+      <div class="label">Total Reports</div>
+    </div>
+    <div class="stat-box">
+      <div class="num" id="statPending">0</div>
+      <div class="label">Pending</div>
+    </div>
+    <div class="stat-box">
+      <div class="num" id="statResolved">0</div>
+      <div class="label">Resolved</div>
+    </div>
+  </div>
+
+  <!-- Report form -->
+  <div class="card">
+    <h2>Report new waste</h2>
+    <form id="reportForm">
+      <label for="location">Location</label>
+      <input type="text" id="location" placeholder="e.g. Near MG Road bus stop" required>
+
+      <label for="wasteType">Waste type</label>
+      <select id="wasteType">
+        <option value="🗑️ Overflowing bin">🗑️ Overflowing bin</option>
+        <option value="🚮 Illegal dumping">🚮 Illegal dumping</option>
+        <option value="♻️ Recyclables not collected">♻️ Recyclables not collected</option>
+        <option value="☣️ Hazardous waste">☣️ Hazardous waste</option>
+        <option value="🍂 Garden/organic waste">🍂 Garden/organic waste</option>
+      </select>
+
+      <label for="severity">Severity</label>
+      <select id="severity">
+        <option value="Low">Low</option>
+        <option value="Medium" selected>Medium</option>
+        <option value="High">High</option>
+      </select>
+
+      <label for="description">Description</label>
+      <textarea id="description" placeholder="Describe what you saw..."></textarea>
+
+      <button type="submit" class="btn btn-primary">Submit report</button>
+    </form>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="pending">Pending</button>
+    <button class="filter-btn" data-filter="resolved">Resolved</button>
+  </div>
+
+  <!-- Reports list -->
+  <div id="reportsList"></div>
+
+</div>
+
+<script src="logic.js"></script>
+</body>
+</html>

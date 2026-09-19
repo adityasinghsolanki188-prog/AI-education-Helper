@@ -1,0 +1,214 @@
+/* ---------- Color palette & basic setup ---------- */
+:root{
+  --forest: #1B4332;
+  --leaf: #40916C;
+  --leaf-light: #95D5B2;
+  --cream: #F6F4EE;
+  --card: #FFFFFF;
+  --text: #23342C;
+  --muted: #6B7A72;
+  --amber: #E09F3E;
+  --red: #BC4749;
+  --border: #E3E0D6;
+}
+
+* { box-sizing: border-box; }
+
+body{
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+/* ---------- Header ---------- */
+header{
+  background: var(--forest);
+  color: white;
+  padding: 28px 20px;
+  text-align: center;
+}
+header h1{
+  margin: 0 0 6px 0;
+  font-size: 1.9rem;
+}
+header p{
+  margin: 0;
+  color: var(--leaf-light);
+  font-size: 0.95rem;
+}
+
+/* ---------- Layout wrapper ---------- */
+.wrap{
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
+
+/* ---------- Stats bar ---------- */
+.stats{
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.stat-box{
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.stat-box .num{
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--forest);
+}
+.stat-box .label{
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ---------- Form card ---------- */
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 28px;
+}
+.card h2{
+  margin-top: 0;
+  font-size: 1.15rem;
+  color: var(--forest);
+}
+label{
+  display: block;
+  font-size: 0.85rem;
+  margin: 12px 0 4px;
+  color: var(--muted);
+}
+input[type="text"], select, textarea{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: var(--cream);
+  color: var(--text);
+}
+textarea{ resize: vertical; min-height: 70px; }
+
+.btn{
+  display: inline-block;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary{
+  background: var(--leaf);
+  color: white;
+  margin-top: 16px;
+  width: 100%;
+}
+.btn-primary:hover{ background: var(--forest); }
+
+/* ---------- Filters ---------- */
+.filters{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.filter-btn{
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.filter-btn.active{
+  background: var(--forest);
+  color: white;
+  border-color: var(--forest);
+}
+
+/* ---------- Report cards ---------- */
+.report{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--leaf);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.report.resolved{
+  border-left-color: var(--muted);
+  opacity: 0.75;
+}
+.report-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+.report-title{
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+.report-location{
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 2px 0 8px;
+}
+.report-desc{
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+.badge{
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  color: white;
+}
+.sev-low{ background: var(--leaf); }
+.sev-medium{ background: var(--amber); }
+.sev-high{ background: var(--red); }
+.status-pending{ background: var(--amber); }
+.status-resolved{ background: var(--muted); }
+
+.report-actions{
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+.btn-small{
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  cursor: pointer;
+}
+.btn-resolve{ color: var(--forest); font-weight: 600; }
+.btn-delete{ color: var(--red); }
+
+.empty{
+  text-align: center;
+  color: var(--muted);
+  padding: 30px 10px;
+  font-size: 0.9rem;
+}
+
+.report-date{
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
